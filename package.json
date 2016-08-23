@@ -1,5 +1,5 @@
 {
-  "name": "frontend",
+  "name": "universal-fluxible-kickstarter",
   "version": "0.0.1",
   "private": false,
   "devDependencies": {
@@ -29,7 +29,6 @@
     "eslint-plugin-import": "^1.14.0",
     "eslint-plugin-jsx-a11y": "^2.1.0",
     "eslint-plugin-react": "^6.1.2",
-    "expose-loader": "^0.7.1",
     "extract-text-webpack-plugin": "1.0.1",
     "file-loader": "0.9.0",
     "filesize": "3.3.0",
@@ -51,34 +50,12 @@
     "webpack-dev-server": "1.14.1",
     "whatwg-fetch": "1.0.0"
   },
-  "dependencies": {
-    "bluebird": "^3.4.1",
-    "body-parser": "^1.6.4",
-    "classnames": "^2.1.3",
-    "cookie-parser": "^1.3.3",
-    "csurf": "^1.6.3",
-    "debug": "^2.0.0",
-    "express": "^4.12.3",
-    "express-state": "^1.2.0",
-    "fluxible": "^1.0.0",
-    "fluxible-addons-react": "^0.2.0",
-    "fluxible-plugin-fetchr": "^0.3.3",
-    "intl": "^1.2.4",
-    "intl-locales-supported": "^1.0.0",
-    "react": "^15.3.0",
-    "react-dom": "^15.3.0",
-    "react-helmet": "^3.1.0",
-    "react-intl": "^2.1.3",
-    "react-router": "^2.0.0",
-    "serialize-javascript": "^1.0.0",
-    "serve-favicon": "^2.1.6"
-  },
+  "dependencies": {},
   "scripts": {
-    "build": "node ./scripts/build.js",
-    "prod": "npm run build && NODE_ENV=production node index.js",
-    "dev": "NODE_ENV=development webpack-dashboard -- node index.js"
-  },
-  "eslintConfig": {
-    "extends": "./config/eslint.js"
+    "setup": "npm install && npm run install-deps",
+    "install-deps": "./scripts/npm-x-for-all-packages.sh install",
+    "frontend-build": "node ./frontend/scripts/build.js",
+    "frontend-run-prod": "npm run build && NODE_ENV=production node ./frontend/index.js",
+    "frontend-run-dev": "NODE_ENV=development webpack-dashboard -- node ./frontend/index.js"
   }
 }
