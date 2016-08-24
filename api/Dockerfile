@@ -1,17 +1,14 @@
 FROM node:6.2.1-slim
 
 ENV BASE_DIR /usr/app
-ENV SOURCE_DIR ${BASE_DIR}/src
+ENV SOURCE_DIR ${BASE_DIR}/api
 
 # Create app directory
 RUN mkdir -p ${SOURCE_DIR}
 
 COPY ./package.json ${SOURCE_DIR}
-COPY ./.babelrc ${SOURCE_DIR}
 COPY ./index.js ${SOURCE_DIR}
 
 WORKDIR ${SOURCE_DIR}
-RUN npm install
 
-EXPOSE 3000 3001
-CMD npm run dev
+RUN npm install

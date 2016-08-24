@@ -47,7 +47,7 @@ module.exports = {
 
     // run livereload and webpack dev server
     const compiler = webpack(webpackConfig);
-    compiler.apply(new DashboardPlugin());
+    //compiler.apply(new DashboardPlugin());
     // Run the webpack dev server
     const webpackServer = new WebpackDevServer(compiler, {
         publicPath: webpackConfig.output.publicPath,
