@@ -10,8 +10,7 @@ COPY ./package.json ${SOURCE_DIR}
 COPY ./.babelrc ${SOURCE_DIR}
 COPY ./index.js ${SOURCE_DIR}
 
+ADD . ${SOURCE_DIR}
+
 WORKDIR ${SOURCE_DIR}
 RUN npm install
-
-EXPOSE 3000 3001
-CMD npm run dev

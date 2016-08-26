@@ -9,6 +9,8 @@ RUN mkdir -p ${SOURCE_DIR}
 COPY ./package.json ${SOURCE_DIR}
 COPY ./index.js ${SOURCE_DIR}
 
+ADD . ${SOURCE_DIR}
+
 WORKDIR ${SOURCE_DIR}
 
 RUN npm install

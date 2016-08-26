@@ -1,6 +1,6 @@
 var neo4j = require('neo4j-driver').v1;
 
-var driver = neo4j.driver("bolt://prototype-net", neo4j.auth.basic("localhost", "kake"));
+var driver = neo4j.driver("bolt://backend", neo4j.auth.basic("localhost", "kake"));
 
 
 	var session = driver.session();
