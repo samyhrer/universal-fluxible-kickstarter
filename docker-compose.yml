@@ -7,8 +7,6 @@ services:
     ports:
     - "3000:3000"
     - "3001:3001"
-    networks:
-    - backend
     command:
       npm run start
     depends_on:
@@ -19,8 +17,6 @@ services:
       dockerfile: Dockerfile
     ports:
     - "8080:8080"
-    networks:
-    - backend
     command:
       node index.js
     depends_on:
@@ -36,8 +32,6 @@ services:
     volumes:
     - ./neo4j/data:/data
     - ./neo4j/conf/scripts:/conf
-    networks:
-    - backend
   elasticsearch:
     image: elasticsearch
     command: elasticsearch -Des.network.bind_host=0.0.0.0
@@ -47,23 +41,15 @@ services:
     volumes:
     - ./elasticsearch/data:/usr/share/elasticsearch/data
     - ./elasticsearch/config/scripts:/usr/share/elasticsearch/config
-    networks:
-    - backend
   nginx:
     image: nginx
     ports:
     - "80:80"
     volumes:
     - ./nginx/config/nginx.conf:/etc/nginx/nginx.conf:ro
-    networks:
-    - backend
   redis:
     image: redis
     ports:
     - "6379:6379"
     volumes:
     - ./redis/data:/data
-    networks:
-    - backend
-networks:
-  backend:

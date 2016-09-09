@@ -10,11 +10,10 @@ build
 .DS_Store
 npm-debug.log
 .dockerignore
-<<<<<<< HEAD
 neo4j/data/databases
 neo4j/data/dbms
-=======
 system-containers/neo4j/data/databases
 system-containers/elasticsearch/data
 data-migration
->>>>>>> 5885396... stuff
+neo4j/data/databases
+neo4j/data/dbms
